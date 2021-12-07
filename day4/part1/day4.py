@@ -1,4 +1,3 @@
-
 class BingoGame:
     def __init__(self, inputdatafile):
         self.input_file = inputdatafile
@@ -26,10 +25,10 @@ class BingoGame:
         for number in played_numbers:
             for index_boards, board in enumerate(boards):
                 column_counter = [0, 0, 0, 0, 0]
-                for index_board, board_row in enumerate(board):
-                    for index_row, board_digit in enumerate(board_row):
+                for board_row in board:
+                    for index_bord_digit, board_digit in enumerate(board_row):
                         if board_digit == number:
-                            board_row[index_row] = "X"
+                            board_row[index_bord_digit] = "X"
                     if board_row.count("X") == 5:
                         return number, board
                     else:
